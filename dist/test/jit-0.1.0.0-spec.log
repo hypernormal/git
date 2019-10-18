@@ -1,0 +1,49 @@
+Test suite spec: RUNNING...
+[?25l
+Author
+  Show
+[32m    returns a printable form of Author
+[0mCommit
+  run
+[32m    exits with success
+[0mDatabase
+  store
+[32m    stores a blob
+[0mInit
+  run
+[32m    runs with passed in path
+[0m[32m    runs with no passed in path
+[0m[32m    fails if there is an existing git directory
+[0m  selectPath
+[32m    selects passed in path
+[0m[32m    selects current directory when no path passed in
+[0m  createGitDirs
+[32m    creates refs and objects subdirs
+[0m  printSuccess
+[32m    prints out the success message with filepath
+[0mTree
+  Show
+[32m    returns a printable form of Tree
+[0mUtil
+  gitPath
+[32m    returns the built gitPath
+[0m  dbPath
+[32m    returns the built dbPath
+[0m  headPath
+[32m    returns the built headPath
+[0m  createDir
+[32m    creates a directory successfully
+[0m[32m    handles failure to create dir
+[0mWorkspace
+  toIgnore
+[32m    ignores correct dirs
+[0m  filterIgnoreFiles
+[32m    filters out ignored dirs and files
+[0m[32m    does not filter out non-ignored dirs and files
+[0m  listFiles
+[32m    lists files in a dir without ignored files
+[0m
+Finished in 0.0040 seconds
+[32m20 examples, 0 failures
+[0m[?25hTest suite spec: PASS
+Test suite logged to: dist/test/jit-0.1.0.0-spec.log

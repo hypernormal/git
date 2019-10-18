@@ -1,0 +1,86 @@
+name:                jit
+version:             0.1.0.0
+synopsis:            Haskell git client
+homepage:            https://git.thecommons.land/jamesv/jit
+license:             BSD3
+author:              jamesv
+maintainer:          jamesv@riseup.net
+category:            Development
+build-type:          Simple
+cabal-version:       >=1.10
+
+library
+  hs-source-dirs: src
+  exposed-modules:
+    Author
+    Commit
+    Database
+    Init
+    OptionParser
+    Tree
+    Types
+    Util
+    Workspace
+  build-depends:
+    base >=4.10 && <4.12,
+    base16-bytestring >=0.1 && <0.2,
+    bytestring >=0.10 && <0.11,
+    cryptohash >=0.11 && <0.12,
+    directory >=1.3 && <1.4,
+    filepath >=1.4 && <1.5,
+    optparse-applicative >=0.14 && <0.15,
+    random >=1.1 && <1.2,
+    text >=1.2 && <1.3,
+    time >= 1.8.0 && < 1.9,
+    zlib >=0.6 && <0.7
+  default-language: Haskell2010
+
+executable jit-exec
+  main-is: Main.hs
+  build-depends:
+    base >=4.10 && <4.12,
+    base16-bytestring >=0.1 && <0.2,
+    bytestring >=0.10 && <0.11,
+    cryptohash >=0.11 && <0.12,
+    directory >=1.3 && <1.4,
+    filepath >=1.4 && <1.5,
+    jit,
+    optparse-applicative >=0.14 && <0.15,
+    random >=1.1 && <1.2,
+    text >=1.2 && <1.3,
+    time >= 1.8.0 && < 1.9,
+    zlib >=0.6 && <0.7
+  default-language: Haskell2010
+
+test-suite spec
+  type: exitcode-stdio-1.0
+  main-is: Spec.hs
+  hs-source-dirs:
+    test
+  ghc-options: -Wall
+  build-depends:
+    base >=4.10 && <4.12,
+    base16-bytestring >=0.1 && <0.2,
+    bytestring >=0.10 && <0.11,
+    cryptohash >=0.11 && <0.12,
+    directory >=1.3 && <1.4,
+    filepath >=1.4 && <1.5,
+    hspec ==2.*,
+    jit,
+    optparse-applicative >=0.14 && <0.15,
+    random >=1.1 && <1.2,
+    regex >=1.0,
+    silently ==1.*,
+    text >=1.2 && <1.3,
+    time >= 1.8.0 && < 1.9,
+    zlib >=0.6 && <0.7
+  other-modules:
+    AuthorSpec
+    CommitSpec
+    DatabaseSpec
+    InitSpec
+    TreeSpec
+    UtilSpec
+    WorkspaceSpec
+  default-language: Haskell2010
+  build-tool-depends: hspec-discover:hspec-discover == 2.*
