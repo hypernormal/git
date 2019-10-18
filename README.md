@@ -1,5 +1,5 @@
 # ghit
-Building a Git client from scratch in Haskell, following the Building Git book as reference
+Building a Git client from scratch in Haskell, following the Building Git book as reference. Very much a WIP
 
 So far only the commands `git init` and `git commit` have been implemented.
 It uses Cabal as the build tool and HSpec as the testing framework.
@@ -13,10 +13,18 @@ It uses Cabal as the build tool and HSpec as the testing framework.
 
 ## Current features:
 ### Init Example:
-`make init`
+```
+❯ ./dist/build/jit-exec/jit-exec init
+Initialized empty Jit repository in /home/jamesvaughan/Desktop/git
+```
 
 ### Commit Example:
-`make commit`
+```
+❯ export GIT_AUTHOR_EMAIL="jamesv@riseup.net"
+❯ export GIT_AUTHOR_NAME="James Vaughan"
+❯ echo "Test commit" | ./dist/build/jit-exec/jit-exec commit
+[(root-commit) 277730d13b55f4c3ac166f6aa80c2cda7037b0a8] Test commit
+```
 
 ## Testing:
 `make spec`
