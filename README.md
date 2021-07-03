@@ -15,7 +15,7 @@ It uses Cabal as the build tool and HSpec as the testing framework.
 ### Init Example:
 ```
 ❯ ./dist/build/jit-exec/jit-exec init
-Initialized empty Jit repository in /home/jamesvaughan/Desktop/git
+Initialized empty Jit repository in ~/path/to/git
 ```
 
 ### Commit Example:
